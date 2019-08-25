@@ -9,10 +9,15 @@
   </head>
 
   <body>
+
+    <%if session[:source] %>
+      <h1>Thank you for visiting me through <%=session[:source] %></h1>
+    <%end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%if current_user %>
+    <%if current_user.is_a?(User) %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
     <%else%>
       <%= link_to 'Register', new_user_registration_path %>
@@ -20,5 +25,6 @@
     <%end %>
 
     <%= yield %>
+
   </body>
 </html>
