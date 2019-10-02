@@ -11,10 +11,7 @@
   </head>
 
   <body>
-
-    <%if session[:source] %>
-      <h1>Thank you for visiting me through <%=session[:source] %></h1>
-    <%end %>
+    <%= source_helper("Application") %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
