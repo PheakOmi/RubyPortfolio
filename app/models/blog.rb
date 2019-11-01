@@ -6,4 +6,8 @@ class Blog < ApplicationRecord
   validates_presence_of :title, :body
 
   belongs_to :topic
+
+  def self.used_it_limit
+    limit(2)
+  end
 end
